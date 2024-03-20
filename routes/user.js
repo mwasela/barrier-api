@@ -11,14 +11,14 @@ const authenticateToken = require('../middlewares/auth');
 //return current user
 router.get('/current', authenticateToken, async (req, res) => {
   const Userlogged = req.user;
-  //console.log("user", User);
+  console.log("user", User);
   try {
     const user_ = await User.findOne({
       where: {
-        blk_unittracker_users_id: Userlogged.id
+        blk_users_id: Userlogged.id
       },
       attributes: {
-        exclude: ['blk_unittracker_users_password']
+        exclude: ['blk_users_password']
       }
     });
 
@@ -84,12 +84,12 @@ router.post('/login', async (req, res) => {
 
 
 router.get('/user', authenticateToken, async (req, res) => {
-  const { id } = req.user;
+  const { id } = req.user.id;
 
   try {
     const user = await User.findOne({
       where: {
-        blk_unittracker_users_id: id
+        blk_users_id: id
       },
       attributes: {
         exclude: ['blk_users_password']

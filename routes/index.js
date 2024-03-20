@@ -91,6 +91,31 @@ router.post('/NotificationInfo/KeepAlive', authenticateToken, async function (re
 );
 
 
+router.put('/plate', authenticateToken, async (req, res) => {
+
+  const { _plate, _id } = req.body;
+
+  console.log(req.body);
+
+  try {
+      const unit = await BarrierLogs.update({
+
+          plateNumber: _plate
+          
+      }, {
+          where: {
+              id: _id
+          }
+      });
+
+      return res.status(201).json({ message: 'Record updated successfully' });
+  } catch (err) {
+     return  res.status(500).json({ message: err.message });
+  }
+}
+);
+
+
 router.post('/NotificationInfo/TollgateInfo', authenticateToken, async function (req, res, next) {
   const data = req.body;
   //console.log("req data", data);
@@ -109,7 +134,7 @@ router.post('/NotificationInfo/TollgateInfo', authenticateToken, async function 
       'direction': direction
     });
 
-    console.log("sawa");
+    ///console.log("sawa");
 
     // Update lastPlateNumber
     lastPlateNumber = plateNumber;
