@@ -173,7 +173,43 @@ router.put('/plate', authenticateToken, async (req, res) => {
 );
 
 
-router.post('/NotificationInfo/TollgateInfo', async function (req, res, next) {
+
+router.post('/BNotificationInfo/TollgateInfo', async function (req, res, next) {
+  const data = req.body;
+  //console.log("req data", data);
+  const plateNumber = data.Picture.Plate.PlateNumber;
+  const plateColor = data.Picture.Plate.PlateColor;
+  const deviceID = data.Picture.SnapInfo.DeviceID;
+  const direction = data.Picture.SnapInfo.Direction;
+
+  if (plateNumber !== lastPlateNumber) {
+    // Store data in carDump array
+
+    carDump.push({
+      'plateNumber': plateNumber,
+      'plateColor': plateColor,
+      'deviceID': deviceID,
+      'direction': direction
+    });
+
+    ///console.log("sawa");
+
+    // Update lastPlateNumber
+    lastPlateNumber = plateNumber;
+  }
+
+  // Logging plate number and color to the console
+  console.log("Plate Number:", plateNumber);
+  console.log("Plate Color:", plateColor);
+  console.log("Device ID:", deviceID);
+  console.log("Direction:", direction);
+
+  console.log("carDump", carDump);
+
+  return res.status(200).json({ status: "ok" });
+});
+
+router.post('/ANotificationInfo/TollgateInfo', async function (req, res, next) {
   const data = req.body;
   //console.log("req data", data);
   const plateNumber = data.Picture.Plate.PlateNumber;
