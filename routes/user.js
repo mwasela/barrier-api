@@ -73,7 +73,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign({ id: user.blk_users_id }, secretKey, { expiresIn: '12h' });
+    const token = jwt.sign({ id: user.blk_users_id }, secretKey, { expiresIn: '365d' });
 
     res.status(200).json({ token });
   } catch (err) {
@@ -81,6 +81,8 @@ router.post('/login', async (req, res) => {
   }
 }
 );
+
+
 
 
 router.get('/user', authenticateToken, async (req, res) => {

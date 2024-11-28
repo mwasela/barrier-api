@@ -1,0 +1,16 @@
+2024-07-18T05:43:56.052441Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-07-18T05:43:56.056045Z 0 [System] [MY-013169] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld.exe (mysqld 8.0.30) initializing of server in progress as process 6436
+2024-07-18T05:43:56.052436Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-07-18T05:43:56.056102Z 0 [System] [MY-013169] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld.exe (mysqld 8.0.30) initializing of server in progress as process 5920
+202424-07-1T0T55:44:3:56936593 1 [S 1s emSy sMYe-]0[M35-013 [I] [Inn]oInBn Inn DB inialiazltiona has started.
+ed.
+2024-07-18T05:43:56.851085Z 1 [ERROR] [MY-012611] [InnoDB] Operating system error number 80 in a file operation.
+2024-07-18T05:43:56.852365Z 1 [ERROR] [MY-012215] [InnoDB] Cannot open datafile '.\ibdata1'
+2024-07-18T05:43:56.852800Z 1 [ERROR] [MY-012960] [InnoDB] Cannot create redo log files because data files are corrupt or the database was not shut down cleanly after creating the data files.
+2024-07-18T05:43:56.867409Z 0 [ERROR] [MY-010020] [Server] Data Dictionary initialization failed.
+2024-07-18T05:43:56.889492Z 0 [ERROR] [MY-013236] [Server] The designated data directory C:\BarrierAPP\barrier-api\mysql-8\ is unusable. You can remove all files that the server added to it.
+2024-07-18T05:43:56.890611Z 0 [ERROR] [MY-010119] [Server] Aborting
+2024-07-18T05:43:57.395877Z 0 [System] [MY-010910] [Server] C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin\mysqld.exe: Shutdown complete (mysqld 8.0.30)  MySQL Community Server - GPL.
+2024-07-18T05:44:01.217074Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2024-07-18T05:44:04.434437Z 0 [Warning] [MY-013829] [Server] Missing data directory for ICU regular expressions: C:\laragon\bin\mysql\mysql-8.0.30-winx64\lib\private\.
+2024-07-18T05:44:05.644319Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.

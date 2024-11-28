@@ -19,7 +19,10 @@ const BarrierLogs = sequelize.define('blk_barrier_logs', {
         type: DataTypes.STRING
     },
     direction: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER
+    },
+    comment: {
+        type: DataTypes.STRING
     },
     createdAt: {
         type: DataTypes.DATE,
